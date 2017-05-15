@@ -11,9 +11,9 @@ If **`readparm`** is turned off (choose `No`), the data will be read by
   are `2D`, `3D`, `Both 2D and 3D`, and `None`.  
 - **`cluster_method`** provides options of clustering methods, the
   default method is `K-means`. Parameters needed are listed in
-parenthesis.  See details in    
+parenthesis.  See details in [Clustering methods](#method)     
 - **`parameter`** sets parameter for clustering. See
-  **`cluster_method`** and   for details.  
+  **`cluster_method`** for details.  
 - **`help_tab`**  
 By default **`help_tab`** is set as `Run data clustering` and TRENDanalysis
 will run data fitting as described. Options other than default `Run data
@@ -53,29 +53,35 @@ When **`export`** is turned on clustering results will be saved as
 When this option is checked, 2D and/or 3D biplots will be saved as PNG
 images.    
 
-#### Clustering methods:  
-  - <a name="Kmeans">K-means (number of clusters)</a>  
+#### <p hidden>method</p>
+<h4>Clustering methods:</h4>  
+##### <p hidden>kmeans</p>
+<li> K-means (number of clusters)</li>  
 The K-means algorithm needs to specify the number of clusters in
 **`parameter`** option. By default it is set as 3. See
 [K-means](http://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html) for
 details. 
-  - <a name="Agglomerative">Aggolerative (number of clusters)</a>  
+##### <p hidden>agglomerative</p>  
+<li>Aggolerative (number of clusters)</li>  
 Similar to K-means, Agglomerative clustering also needs to specify the
 number of clusters.  See [Agglomerative
 Clustering](http://scikit-learn.org/stable/modules/generated/sklearn.cluster.AgglomerativeClustering.html#sklearn.cluster.AgglomerativeClustering)
 for details.  
-  - <a name="Affinity">Affinity Propagation (preference)</a>  
+##### <p hidden>affinity</p>  
+<li>Affinity Propagation (preference)</li>  
 This option perms Affinity Propagation Clustering of data. It doesn't
 require prior-knowledge of number of clusters. Instead, `preference` is
 used to choose exemplars. Choose `None` in **`parameter`** option to set
 `preference` to the median of input similarities. See
 [affinity_propagation](http://scikit-learn.org/stable/modules/generated/sklearn.cluster.affinity_propagation.html#sklearn.cluster.affinity_propagation) for details.   
-  - <a name="DBSCAN">DBSCAN (min_sample)</a>  
+##### <p hidden>dbscan</p>  
+<li> DBSCAN (min_sample)</li>  
 This option performs DBSCAN(Density-Based Spatial Clustering of Applications) clustering. The `min_sample` parameter defines the number of samples to be considered as a core point. 
 See
 [DBSCAN](http://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html)
 for details.  
-  - <a name="meanshift">Mean Shift (bandwidth)</a>  
+##### <p hidden>meanshift</p>  
+<li>Mean Shift (bandwidth)</li>  
 This option applys mean shift clustering. The **`parameter`**  can be
 set as `None`. See [Mean
 Shift](http://scikit-learn.org/stable/modules/generated/sklearn.cluster.MeanShift.html)
