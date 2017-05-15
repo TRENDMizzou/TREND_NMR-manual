@@ -21,6 +21,7 @@
     * [TREND NMR](trendpro/trendmain/README.md)
     * [TRENDanalysis](trendpro/trendanalysis/README.md)
         * [fitting](trendpro/trendanalysis/fitting.md)
+	    	* [1:1 Protein-Ligand Binding](trendpro/trendanalysis/fitting/LigandBinding.md)
         * [clustering](trendpro/trendanalysis/clustering.md)
     * [TRENDset](trendpro/trendset/README.md)
     * [File Formats Supported](manual/fileformat.md)
