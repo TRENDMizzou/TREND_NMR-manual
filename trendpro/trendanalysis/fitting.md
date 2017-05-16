@@ -58,32 +58,37 @@ normalization mode.
 <h4> Fitting models:</h4>  
 ##### <p hidden>protein-ligand</p>  
 <li> 1:1 protein-ligand binding (y_end, KD, Pt)</li>  
-This model provides an equation for 1:1 protein-ligand binding: 
+These three (y_end, KD, Pt) each can be either a parameter to fit (set in
+**`parameters`**) or fixed to a constant value (see the **`constant`**
+field). This model provides an equation for 1:1 protein-ligand binding:  
 {% math %} y = \frac{(K_D+x+Pt-\sqrt{(K_D+x+Pt)^2-4xPt)}}{2Pt} \times y_{\_end} {% endmath %},
 where <i>y</i> is the fraction of bound or free protein (indicated by PC 
 or IC), <i>x</i> stands for total ligand concentration <i>[Lt]</i> which is 
-given by **`xaxis`** options in `Trendmain`, `TREND NMR` or
-`TRENDanalysis`, 
-{% math %} K_D {% endmath %} stands for dissociation constant, which is the
-parameter to be fit here and should be set in the **`parameters`**
-textfield, {% math %}Pt{% endmath %} stands for total protein 
-concentration, {% math %} y_{\_end} {% endmath %} stands for y value 
-when ligand concentration 
-is infinite. If binding isotherm is represented by normalized PC1 the
-initial value of {% math %} y_{\_end} {% endmath %} can be set as 1.0. 
-They can be either parameters to fit (set in **`parameters`**) or fixed as constant values (set in
-**`constant`** texfield) 
-**Note**, the unit of {% math %} Pt {% endmath %} must be identical to
-unit of x values (**`xunit`**), the fitted binding affinity {% math %} 
-K_D {% endmath %} also have the same unit.  
+listed in the file specified in the **`xaxis`** field in 
+`Trendmain`, `TREND NMR` or `TRENDanalysis`, 
+{% math %} K_D {% endmath %} refers to the dissociation constant 
+to fit. You should list an initial guess for the value of 
+{% math %} K_D {% endmath %} 
+in the **`parameters`** field.  {% math %}Pt{% endmath %} represents 
+the total protein concentration, {% math %} y_{\_end} {% endmath %} 
+represents the amplitude of the y-axis of the binding isotherm at
+infinite ligand concentration. When the binding isotherm is represented
+by a normalized PC1, the initial value of {% math %} y_{\_end} {% endmath %} 
+can be set to 1.0. **Note**, the unit of {% math %} Pt {% endmath %} 
+must be identical to units of the values of X set in the `xunit` 
+field. The binding affinity {% math %} K_D {% endmath %} has the same
+units.   
 An example of 1:1 protein-ligand binding is shown below. 
 <img src="../png/trendanalysis/ligandbinding.png" alt="ligandbinding" width="600">  
 
 ##### <p hidden>exponential-rate</p>  
-<li> Exponential decay rate (A0, K, C) </li>  
-`Single exponential decay`:  {% math %} y = C + Ae^{-k \cdot x}
-{% endmath %}, where <i>A0</i> is the initial amplitude,  {% math %} C {% endmath %}
-is offset, <i>k</i> is the rate constant. Rate can be calculated as inverse
+<li> Exponential decay (A, K, C) </li>  
+The function of `Exponential` is {% math %} y = C + Ae^{-k \cdot x}
+{% endmath %}, where <i>A</i> is the amplitude of the difference 
+between the initial value and the estimate of the asymptote that
+function approaches {% math %} C {% endmath %}. {% math %} C {% endmath
+%} is the offset of this asymptote from zero, , <i>k</i> is the fitted 
+rate constant of the decay. Rate can be calculated as inverse
 of t: {% math %} R=\frac{1}{t} {% endmath %}   
 Similar to [1:1 Protein Ligand Binding](#protein-ligand), {%
 math %} C, A, t {% endmath %} must be defined in either
@@ -91,31 +96,44 @@ math %} C, A, t {% endmath %} must be defined in either
 However, TRENDanalysis can initialize parameters for exponential fitting
 (both exponential growth and decay) automatically and hence their
 initial values do not need to be set, such as:  
+##### <p hidden>exponential-time</p>  
+<li> Exponential recovery (A, C, T) </li>
+The function is {% math %} y = C + Ae^{-\frac{x}{T}} {% endmath %},
+where {% math %} A {% endmath %} is the amplitutde of the difference
+between the initial value and the estimate of the asymptote that the
+function approaches {% math %} C {% endmath %} is the offset of this
+asymptote from zero, {% math %} T {% endmath %} is the fitted time
+constant of the recovery. {% math %} T = \frac{1}{k} {% endmath %}, where
+{% math %} k {% endmath %} is fro mthe exponential decay function,
+equivalent to this function.  These parameters must be defined in either
+the list of **`parameters`** or **`constants`**.  
 <img src="../png/trendanalysis/exponential.png" alt="exponential" width="600">  
 ##### <p hidden>two-exponential</p>  
 <li>Two-exponential decay(A1, t1, A2, t2, C)</li>  
-The function of `Two phase exponential` is {% math %} y =
+The function of `Two exponential` decay is {% math %} y =
 A_1e^{-\frac{x}{t_1}} + A_2e^{-\frac{x}{t_2}} + C {% endmath %} ,
-where {% math %} A_1, A_2 {% endmath %} stand for amplitudes of two
-phases, {% math %} t_1, t_2 {% endmath %} are time constans of two
-phases, {% math %} C {% endmath %} is offset. Choose the initial
-values carefully according to the shape of your curve.   
+where {% math %} A_1, A_2 {% endmath %} stand for amplitudes of the two
+phases, {% math %} t_1, t_2 {% endmath %} are time constants of two
+phases, and {% math %} C {% endmath %} is the offset between zero and
+the asymptote approached at high values of x. The user must choose the
+initial values carefully according to the shape of the component and
+points to be fitted.    
 ##### <p hidden>linear-regression</p>  
 <li>Linear regression</li>  
-Linear regression does not need **`parameters`** or **`constants`**,
-therefore these two options will be ignored when linear regression model 
+Since linear regression does not need **`parameters`** or **`constants`**,
+these two options are ignored when linear regression 
 is chosen. 
 ##### <p hidden>user-defined</p>  
 <li>User defined function</li>  
-Besides implemented models descrbied above, TRENDanalysis also supports
-user defined function. The equation can be input in **`function`**
-text field, while **`parameters`** and **`constants`** are set in the
-same way as descrbied before. **Note** initial values are very important
-for any non-linear curve fitting. An example of user defined example is
-given as:  
+Besides the models descrbied above, TRENDanalysis also supports
+user-defined functions. The equation can be input in **`function`**
+text field, while its **`parameters`** and **`constants`** are set in the
+same way as descrbied above. **Note** that initial values are very important
+for any non-linear curve fitting. In the **`fittingmode`** field, select
+user-defined function, and enter the equation in the **`function`**
+field as illustrated in this example:   
 <img src="../png/trendanalysis/userdefine.png" alt="user defined" width="600">  
-It is an example fitting data to exponential equation with rate constant
-(R) instead of time constant (t), the equation is: {% math %} y=Ae^{Rx}
- + C {% endmath %}. Note in the **`function`** textfield 
-a function instead of an equation is required. Therefore only
-`A*exp(R*x) + C` is allowed, while `y=A*exp(R*x) + C` is wrong.   
+Note that `y=` is not used when entering in the function to be fitted.
+It is important that the number of data points in the component to be
+fitted exceed the number of fittable parameters by one, at the very
+least.  
