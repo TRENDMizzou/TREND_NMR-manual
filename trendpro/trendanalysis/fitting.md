@@ -96,6 +96,7 @@ math %} C, A, t {% endmath %} must be defined in either
 However, TRENDanalysis can initialize parameters for exponential fitting
 (both exponential growth and decay) automatically and hence their
 initial values do not need to be set, such as:  
+<img src="../png/trendanalysis/exponential.png" alt="exponential" width="600">  
 ##### <p hidden>exponential-time</p>  
 <li> Exponential recovery (A, C, T) </li>
 The function is {% math %} y = C + Ae^{-\frac{x}{T}} {% endmath %},
@@ -104,10 +105,10 @@ between the initial value and the estimate of the asymptote that the
 function approaches {% math %} C {% endmath %} is the offset of this
 asymptote from zero, {% math %} T {% endmath %} is the fitted time
 constant of the recovery. {% math %} T = \frac{1}{k} {% endmath %}, where
-{% math %} k {% endmath %} is fro mthe exponential decay function,
+{% math %} k {% endmath %} is from the exponential decay function,
 equivalent to this function.  These parameters must be defined in either
 the list of **`parameters`** or **`constants`**.  
-<img src="../png/trendanalysis/exponential.png" alt="exponential" width="600">  
+<img src="../png/trendanalysis/exponential_2.png" alt="exponential_time" width="600">  
 ##### <p hidden>two-exponential</p>  
 <li>Two-exponential decay(A1, t1, A2, t2, C)</li>  
 The function of `Two exponential` decay is {% math %} y =
