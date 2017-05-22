@@ -122,7 +122,7 @@ the asymptote approached at high values of x. The user must choose the
 initial values carefully according to the shape of the component and
 points to be fitted.    
 #### <p hidden>water-logsy</p>  
-<li> Water-LOGSY (KD, Imax, x) </li>  
+<li> Water-LOGSY (KD, Imax) </li>  
 This model determines {% math %} K_D {% endmath %} by fitting the
 obtaied by Water-LOGSY binding isotherm  with equation: {% math %} 
 y = \frac{I_{max} \times x}{(K_D + x)} {% endmath %}, where y stands for
