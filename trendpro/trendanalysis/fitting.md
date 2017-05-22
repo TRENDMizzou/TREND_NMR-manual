@@ -61,7 +61,9 @@ normalization mode.
 These three (y_end, KD, Pt) each can be either a parameter to fit (set in
 **`parameters`**) or fixed to a constant value (see the **`constant`**
 field). This model provides an equation for 1:1 protein-ligand binding:  
-{% math %} y = \frac{(K_D+x+Pt-\sqrt{(K_D+x+Pt)^2-4xPt)}}{2Pt} \times y_{\_end} {% endmath %},
+$$   
+y = \frac{(K_D+x+Pt-\sqrt{(K_D+x+Pt)^2-4xPt)}}{2Pt} \times y_{\_end}
+$$
 where <i>y</i> is the fraction of bound or free protein (indicated by PC 
 or IC), <i>x</i> stands for total ligand concentration <i>[Lt]</i> which is 
 listed in the file specified in the **`xaxis`** field in 
@@ -119,6 +121,16 @@ phases, and {% math %} C {% endmath %} is the offset between zero and
 the asymptote approached at high values of x. The user must choose the
 initial values carefully according to the shape of the component and
 points to be fitted.    
+#### <p hidden>water-logsy</p>  
+<li> Water-LOGSY (KD, Imax, x) </li>  
+This model determines {% math %} K_D {% endmath %} by fitting the
+obtaied by Water-LOGSY binding isotherm  with equation: {% math %} 
+y = \frac{I_{max} \times x}{(K_D + x)} {% endmath %}, where y stands for
+changes in corrected Water-LOGSY intensity 
+during titration, {% math %} I_{max} {% endmath %} stands for 
+the maximum intensity change, x stands
+for total ligand concentration ligand concentration <i>[Lt]</i> which is 
+specified in the same way as [1:1 protein-ligand binding](#protein-ligand).   
 ##### <p hidden>linear-regression</p>  
 <li>Linear regression</li>  
 Since linear regression does not need **`parameters`** or **`constants`**,
