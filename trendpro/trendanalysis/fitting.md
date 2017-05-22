@@ -121,16 +121,18 @@ phases, and {% math %} C {% endmath %} is the offset between zero and
 the asymptote approached at high values of x. The user must choose the
 initial values carefully according to the shape of the component and
 points to be fitted.    
-#### <p hidden>water-logsy</p>  
-<li> Water-LOGSY (KD, Imax) </li>  
+#### <p hidden>langmuir</p>  
+<li> Langmuir equation (KD, Imax) </li>  
 This model determines {% math %} K_D {% endmath %} by fitting the
-obtaied by Water-LOGSY binding isotherm  with equation: {% math %} 
-y = \frac{I_{max} \times x}{(K_D + x)} {% endmath %}, where y stands for
-changes in corrected Water-LOGSY intensity 
-during titration, {% math %} I_{max} {% endmath %} stands for 
-the maximum intensity change, x stands
-for total ligand concentration ligand concentration <i>[Lt]</i> which is 
-specified in the same way as [1:1 protein-ligand binding](#protein-ligand).   
+binding isotherm with the equation, {% math %} 
+y = \frac{I_{max} \times x}{K_D + x} {% endmath %}, where y 
+the changes during titration, {% math %} I_{max} {% endmath %} refers to 
+the maximum intensity change, x refers to 
+the total ligand concentration ligand concentration <i>[Lt]</i>, just as 
+it does for the [1:1 protein-ligand binding](#protein-ligand) model
+above. A recent example applied the Langmuir equation to a titration
+measured accurately by WaterLOGSY at low [protein] ([Huang et al., 2017,
+*Sci. Rep.*)](http://dx.doi.org/10.1038/srep43727).     
 ##### <p hidden>linear-regression</p>  
 <li>Linear regression</li>  
 Since linear regression does not need **`parameters`** or **`constants`**,
