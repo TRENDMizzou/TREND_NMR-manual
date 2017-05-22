@@ -149,13 +149,15 @@ The line of **Exponential time** is a flag that turns on initialization
 of parameters defined in the **Parameters** line. Usually the auto parameter 
 initialization works fine. Hence, there is no need to list initial
 values in the **Parameters** line. TREND also supports auto parameter
-initialization for function of `C + A * exp( -k * x)`. To turn on it
+initialization for exponential function rate constant: `C + A * exp( -k * x)`. 
+To turn it on
 just add a line of **Exponential rate**.  The `Constants: None` line specifies
 the absence of constants in the fitting.   
 - `sort` argument defines which parameter to be sorted in the
-  batch of results. By default `KD` will be sorted. **Note** An error will happen
-if TRENDset fails to find fitting results of the parameter defined in 
-the `sort` field. 
+  batch of results. By default `KD` will be sorted. **Note** If `sort`
+is not set, or the parameters set by `sort` is not found in one or 
+more fitting results, TRENDset will generate a table without sorting
+selected parameters.   
 - `order` defines the order of sorting. By default sorted values will be
   outputed in the ascending order.  
 - `cutoff` defines which results are color-coded as a "hit". Values
