@@ -1,35 +1,29 @@
 ## TREND: TRack Equilibrium or Non-equilibrium shifts in Data
 ### Resolve Trends such as Binding Isotherms and Time Courses Directly from Spectra, Imaging, or Lists
-Version 1.1.0  
+Version 1.7.0  
 For further information, see 
 [biochem.missouri.edu/trend](http://biochem.missouri.edu/trend)  
 ### Introduction:
-TREND is a software package that determines the main trend(s) of change across a series of 2D
-digital measurements, such as imaging and NMR spectra. TREND works by applying principal component
-analysis to non-interpreted 2D digital measurements in multiple formats including spectra (from
-NMR, other spectroscopies, and mass spectrometry), raw NMR data, movies, images, lists, and
-spreadsheet files. The principal components extracted from them by TREND represent the main
-changes among the data frames. These could be binding isotherms, time courses, or a variety of
-population shifts. The main requirement is that the data frames be measured consistently in order
-to allow quantitative comparison. Series of 2D measurements in an unsupported format may be
-converted into a text file or spreadsheet in order to be read by TREND for analysis. The TREND
-package includes a program to reconstruct movies or a stack of spectra from the principal
-components selected by the user. TREND has been developed for ease of installation under Windows,
-Mac OS X, and Ubuntu and Fedora versions of Linux. TREND© (sponsored by NSF) is free for academic
-users.
-___
+Getting binding isotherms and time courses within minutes from complex
+spectra and movies was recently introduced by TREND. It also
+reconstructs simplified movies and spectra using just the components you
+choose. 40 academic licensees from nine countries (and growing) now
+enjoy these capabilities of the original package.
+The new [TREND NMR Pro](trendpro/README.md) package specializes in NMR usages, saving time for
+professionals. [TREND NMR Pro](trendpro/README.md) automatically computes the NMR spectral
+trend of your interest and fits the curve of your choice to that trend
+to get the parameter you need, e.g., <i>K<sub>D</sub></i> or rate 
+constant (features of
+[TRENDanalysis](trendpro/trendanalysis/README.md). 
+En route, it automatically recognizes your NMR file type
+and zooms to the spectral region you select 
+(features of [TREND NMR](trendpro/trendmain/README.md)). You
+can fit and rank a series of many titrations or reactions automatically
+within minutes using [TRENDset](trendpro/trendset/README.md). 
+For example, you can automate fitting of
+series of 1D or 2D spectra to estimate KD, or another parameter, using
+the appropriate equation. You can compare and cluster spectra of
+complexes to rank binders using TRENDanalysis. The automation can
+increase your productivity and insight, and thereby free you to think
+strategically.
 
-
-<img src="./png/kinetics_small.png" width="400" alt="main time course" align="middle">   
-#### TREND captures main time courses of change of movies or NMR spectra  
-***
-<img src="./png/workflow_small.png" width="400" alt="workflow" align="middle">  
-
-
-___  
-
-[Academic Software License Request](http://biochem.missouri.edu/trend/academic_request.php)  
-[Non-Academic/Commerical Software License Request](http://biochem.missouri.edu/trend/commerical_request.php)  
-[TREND Academic Software License Agreement [PDF]](http://biochem.missouri.edu/trend/docs/TREND_LicenseAgreement.pdf)  
-
-If you have any question, please contact <trendmizzou@gmail.com>

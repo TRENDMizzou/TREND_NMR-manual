@@ -1,4 +1,4 @@
-## Manual of *TRENDpro*
+## Manual of *TREND NMR Pro*
 
 * [TREND NMR](trendmain/README.md)  
 
