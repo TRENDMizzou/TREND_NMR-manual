@@ -1,8 +1,10 @@
-## TREND: TRack Equilibrium or Non-equilibrium shifts in Data
-### Resolve Trends such as Binding Isotherms and Time Courses Directly from Spectra, Imaging, or Lists
+## TREND NMR Pro: TRack Equilibrium or Non-equilibrium shifts in NMR Data
+### Resolve and Fit Trends such as Binding Isotherms and Time Courses Directly from FID, Spectra, or Lists  
 Version 1.7.0  
 For further information, see 
 [biochem.missouri.edu/trend](http://biochem.missouri.edu/trend)  
+For manual of classic TREND, see
+[https://trendmizzou.gitbooks.io/trend-manual/content](https://trendmizzou.gitbooks.io/trend-manual/content)   
 ### Introduction:
 Getting binding isotherms and time courses within minutes from complex
 spectra and movies was recently introduced by TREND. It also
