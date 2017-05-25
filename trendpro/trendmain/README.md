@@ -1,4 +1,4 @@
-### TREND NMR - Binding Isotherms and  Time Courses Readily from NMR  
+### TREND NMR - Binding Isotherms and Time Courses Readily from NMR  
 - TREND NMR is an NMR-optimized improvement upon [Trendmain](../../manual/GUI/trendmaingui.md). 
 It requires a minimum of five measurements (collected uniformly) in
 order to track a trend among them or to make a comparison.  

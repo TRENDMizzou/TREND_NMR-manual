@@ -1,5 +1,5 @@
 ## TREND NMR Pro: TRack Equilibrium or Non-equilibrium shifts in NMR Data
-### Resolve and Fit Trends such as Binding Isotherms and Time Courses Directly from FID, Spectra, or Lists  
+### Resolve and Fit Trends such as Binding Isotherms and Time Courses Directly from Spectra, FIDs, or Lists  
 Version 1.7.0  
 For further information, see 
 [biochem.missouri.edu/trend](http://biochem.missouri.edu/trend)  

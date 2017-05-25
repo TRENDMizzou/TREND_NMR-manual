@@ -1,4 +1,4 @@
-## TRENDset - Batch Fitting and Binding Affinities (or Time Courses) 
+## TRENDset - Batch Fitting of Binding Affinities (or Time Courses) 
 ### Description  
 - TRENDset works on a batch of titrations to
   determine the binding isotherm and <i>K<sub>D</sub></i> of each
