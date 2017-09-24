@@ -170,7 +170,7 @@ PCA results, preview of selected ROIs, and fitting results of each
 experiment will be saved to the subdirectories named as
 `TITLE/EXP_NAME/`.  
 - `XLIM` defines the indices of x-axis points used in the PCA analysis, 
-e.g.`1, max` means using all points in x-axis. `450, 500` means
+e.g.`1-max` means using all points in x-axis. `450-500` means
 using points from 450 to 500. The definition of "points" is identical to
 that used by `index` in Bruker Topspin.  
 - `YLIM` defines indices of y-axis points used for PCA analysis, provided
