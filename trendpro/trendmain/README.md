@@ -8,6 +8,7 @@ but differ in small ways.
 - For details of each option, see the [GUI mannual](../../manual/GUI/trendmaingui.md) 
 and [CLI mannual]((../../manual/CLI/trendmain.md)).  
 <img src="../png/trendmain/trendnmr_1.png" alt="trendnmr_spectra" width="600">  
+##### <p hidden>spectra</p>
 - **Spectra**  
 - The **`spectra`**  menu is used for analysis of NMR spectra. It is similar 
 to the **`nmr`** menu of [Trendmain](../../manual/GUI/trendmaingui.md). 
@@ -50,6 +51,7 @@ of input spectra.
 `Contour level` widget in the bottom of the preview. 
 <img src="../png/trendmain/ROI_1.png" alt="trendnmr_ROI_1" width="600">  
 <img src="../png/trendmain/ROI_2.png" alt="trendnmr_ROI_1" width="400">  
+##### <p hidden>fid</p>
 - **FIDs**  
 - The **`fid`** menu is very similar to the **`spectra`** menu but 
 should be used if analyzing free induction decays (FIDs). This menu is
@@ -59,6 +61,7 @@ subtrcting an on-resonance solvent signal. FID files such as NMRPipe
 `JCAMP-DX` formats are supported by the `file` browser. Directories each containing a Bruker Topspin FID (`brukerfid`) or 
 Agilent VnmrJ FID (`agilentfid`) can be read by the `dir` browser.  
 <img src="../png/trendmain/trendnmr_2.png" alt="trendnmr_fid" width="600"> 
+##### <p hidden>peaklist</p>
 - **Peaklists**  
 - The **`peaklist`** menu currently only supports Sparky peak list format 
 `sparky`. It supports scaling of rows under the `scaling` and optionally
