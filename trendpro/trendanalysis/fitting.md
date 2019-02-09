@@ -81,7 +81,7 @@ must be identical to units of the values of X set in the `xunit`
 field. The binding affinity {% math %} K_D {% endmath %} has the same
 units.   
 An example of 1:1 protein-ligand binding is shown below. 
-<img src="../png/trendanalysis/ligandbinding.png" alt="ligandbinding" width="600">  
+<img src="../png/trendanalysis/ligandbinding.png" alt="ligandbinding" width="600">   
 
 ##### <p hidden>exponential-rate</p>  
 <li> Exponential decay (A, K, C) </li>  
@@ -97,8 +97,9 @@ math %} C, A, t {% endmath %} must be defined in either
 **`pararmeters`** or **`constants`**. 
 However, TRENDanalysis can initialize parameters for exponential fitting
 (both exponential growth and decay) automatically and hence their
-initial values do not need to be set, such as:  
-<img src="../png/trendanalysis/exponential.png" alt="exponential" width="600">  
+initial values do not need to be set, such as:   
+<img src="../png/trendanalysis/exponential.png" alt="exponential" width="600">    
+
 ##### <p hidden>exponential-time</p>  
 <li> Exponential recovery (A, C, T) </li>
 The function is {% math %} y = C + Ae^{-\frac{x}{T}} {% endmath %},
@@ -133,6 +134,12 @@ it does for the [1:1 protein-ligand binding](#protein-ligand) model
 above. A recent example applied the Langmuir equation to a titration
 measured accurately by WaterLOGSY at low [protein] ([Huang et al., 2017,
 *Sci. Rep.*)](http://dx.doi.org/10.1038/srep43727).     
+#### <p hidden>henderson</p>  
+<li> Henderson-Hasselbalch equation (pKa, ymax, ymin) </li>  
+This model determines pKa by fitting the equation 
+{% math %} y = y_{max} - \frac{y_{max} - y_{min}}{1+10^{x-pKa}}  {% endmath %}, 
+where y the changes of chemical shift or PC during titration, x refers to the pH. 
+
 ##### <p hidden>linear-regression</p>  
 <li>Linear regression</li>  
 Since linear regression does not need **`parameters`** or **`constants`**,
