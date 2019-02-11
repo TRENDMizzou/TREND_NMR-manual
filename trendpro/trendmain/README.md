@@ -116,7 +116,7 @@ whose CCS vary smaller than the threshold (e.g. 0.02 ppm) across different spect
 **start** at lower right to start the calculation. `TRENDanalysis` can be used to continue 
 and adjust the calculations under the CONCISE tab. For example, the first 
 and last extreme states may be set and the plot can be labeled using a file 
-listing the labels for the peaks.  
+listing the labels for the peaks. See [CONCISE manual](../trendanalysis/concise.md#interactive) for details. 
 
 
 

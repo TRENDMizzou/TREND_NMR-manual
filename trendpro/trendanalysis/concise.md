@@ -30,6 +30,7 @@ The format of this file is identical to
 the format of `fileindex`.) **Note** the sequence in a label file must be 
 identical to its corresponding [fileindex] file. When no file is chosen
 for **`labelfile`**, TRENDanalysis will use the file names to label the CONCISE.   
+#### <p hidden>interactive</p>  
 #### Interactive Plot  
 <img src="../png/trendanalysis/concise_2.png" alt="CONCISE" width="600">  
 An interactive plot is shown after the **Start** button is clicked:  
