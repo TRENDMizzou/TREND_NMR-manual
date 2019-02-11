@@ -7,5 +7,6 @@ conditions.
 
 * [`fitting`](fitting.md)  
 * [`clustering`](clustering.md)  
+* [`concise`](concise.md)  
 
 

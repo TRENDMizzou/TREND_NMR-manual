@@ -22,6 +22,7 @@
     * [TRENDanalysis](trendpro/trendanalysis/README.md)
         * [fitting](trendpro/trendanalysis/fitting.md)
         * [clustering](trendpro/trendanalysis/clustering.md)
+        * [concise](trendpro/trendanalysis/concise.md)
     * [TRENDset](trendpro/trendset/README.md)
     * [File Formats Supported](manual/fileformat.md)
     * [Known Limitations by OS](doc/Known_limitations_by_OS.md)
