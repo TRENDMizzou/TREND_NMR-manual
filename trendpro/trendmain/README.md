@@ -5,8 +5,8 @@ order to track a trend among them or to make a comparison.
 - In the left side bar, there are three modes to choose from: **`spectra`**, 
 **`fid`**, and **`peaklist`**. They function similarly, 
 but differ in small ways. 
-- For details of each option, see the [GUI mannual](../../manual/GUI/trendmaingui.md) 
-and [CLI mannual]((../../manual/CLI/trendmain.md)).  
+- For details of each option, see the [GUI manual](../../manual/GUI/trendmaingui.md) 
+and [CLI manual]((../../manual/CLI/trendmain.md)).  
 <img src="../png/trendmain/trendnmr_spectra.png" alt="trendnmr_spectra" width="600">  
 ##### <p hidden>spectra</p>
 - **Spectra**  
@@ -64,59 +64,60 @@ Agilent VnmrJ FID (`agilentfid`) can be read by the `dir` browser.
 ##### <p hidden>peaklist</p>
 - **Peaklists**  
 - TREND NMR reads peak lists in `Sparky` and `NMR-STAR` formats in its **`peaklist`** mode. 
-Multiple pices of NMR software can export peak lists in `Sparky` and `NMR-STAR` formats. 
+Multiple pieces of NMR software can export peak lists in `Sparky` and `NMR-STAR` formats. 
 TREND NMR can retrieve `NMR-STAR` files archieved at the Biological Magnetic Resonance Data Bank ([BMRB](http://www.bmrb.wisc.edu/)) 
 when the accession codes are listed in a text file.   
-It supports scaling of rows under the `scaling` and optionally
-of columns under `columnscaling`. [`trendmaingui`](https://trendmizzou.gitbooks.io/trend-manual/content/manual/GUI/trendmaingui.html) (from the original,
+It supports the scaling of rows specified in the `scaling` field. There is also 
+the option to scale columns, which is specified in the 
+`columnscaling` field. [`trendmaingui`](https://trendmizzou.gitbooks.io/trend-manual/content/manual/GUI/trendmaingui.html) 
+(the program from the original,
 general-purpose TREND package) also reads and analyzes lists in Excel,
 CSV, and text files, any of which would be suitable for peak lists.  
 <img src="../png/trendmain/trendnmr_peaklist.png" alt="trendnmr_peaklist" width="600"> 
-- *Important if not amide peaks:* Under **`sparky_fields_to_use_and_scale`**, the default of "N=0.2, H=1" 
+- *Please configure this if not using <sup>15</sup>N HSQC or TROSY spectra:* Under **`sparky_fields_to_use_and_scale`**, the default of "N=0.2, H=1" 
 is appropriate for selecting and scaling the correct fields from amide peak lists. 
 (These peak lists are generated from widely used <sup>15</sup>N HSQC and TROSY NMR spectra.) 
 For peak lists from <sup>13</sup>C-<sup>1</sup>H correlation spectra such as heteronuclear single quantum 
 coherence (HSQC), heteronuclear multiple quantum coherence (HMQC), and methyl TROSY, 
 a similar choice of "C=0.25, H=1" is suitable. Peak lists from 2D homonuclear <sup>1</sup>H-<sup>1</sup>H 
 total correlation spectroscopy (TOCSY) or nuclear Overhauser effect and exchange 
-spectroscopy (NOESY) could instead be set to scale the corresponding entries from each 
-peak list. 
-- **`handling_of_missing_values`** is used to process NMR peak lists differ in the number of peaks. 
+spectroscopy (NOESY) could instead be set to "H=1, H=1".  
+- **`handling_of_missing_values`** is used to process NMR peak lists differing in the number of peaks. 
 The default of `remove rows with missing values` deletes from the calculation those peaks not 
-present in all of the lists. `use mean among spectra` make missing peaks not present in all of 
-the lists as cross-spectra mean value. While `use mean within spectrum` set missing values as 
-the mean of corresponding spectrum.  `set to zero` fills missing values as 0 for calculation.  
-- **`alternation_or_combination_of_fields`** organizes chemical shift data for calculation. 
-The default `interleave (alternate as H, X, H, X, ....)` option reorganizes scaled chemical shift data 
-from each spectrum  (scaled by field  **`sparky_fields_to_use_and_scale`**) to a 1D vector for PCA or CONCISE calculation.  See [Sakurai et al PNAS 2007 104 (39) 15346-1535](https://www.pnas.org/content/104/39/15346).   
+present in all of the lists. `use mean among spectra` handles missing peaks by filling 
+the mean value from the other spectra.  `use mean within spectrum` sets missing values as 
+the mean of the other peaks in the spectrum.  `set to zero` fills in missing values with 0 for the calculation.  
+- **`alternation_or_combination_of_fields`** organizes chemical shift data for the calculation. 
+The default option of `interleave (alternate as H, X, H, X, ....)` option reorganizes scaled chemical shift data 
+from each spectrum  (scaled by field  **`sparky_fields_to_use_and_scale`**) into a 1D vector for PCA or CONCISE calculation.  See [Sakurai et al PNAS 2007 104 (39) 15346-1535](https://www.pnas.org/content/104/39/15346).   
 The `combine (H+X, H+X, ...)` option reduces the dimensionality of 2D or multi-dimensional spectra by calculating combined chemical shfit (CCS) use the weighting factor defined in **`sparky_fields_to_use_and_scale`**. For example, 
 the CCS of HSQC ("N=0.2, H=1") is calculated as {% math %} CCS = 0.2 \times N + 1 \times H {% endmath %}. See 
 [Boulton et al, Sci Rep, 2014 Dec 8;4:7306](https://www.nature.com/articles/srep07306).  
-- **`referencing_of_peak_lists_to_first_list`** Reference spectra to the first 
+- **`referencing_of_peak_lists_to_first_list`** This can be used to reference spectra to the first 
 spectrum in the index file for PCA or CONCISE calculation.  
-By default this option is turned off, assuming the input peak lists are already referenced. 
+By default, this option is turned off because it assumes the input peak lists are already referenced. 
 The `Linear` style of referencing is recommended for CONCISE. (See p6511 in 
 [Cembran et all PCCP 2014](https://www.ncbi.nlm.nih.gov/pubmed/24604024)). Referencing 
 using root mean squared (RMS) differences 
 (see [Xu et al, Sci Rep, 2016](https://www.nature.com/articles/s41598-017-05557-w)) 
 between peak positions may also be chosen but can decrease the number of peaks retained by CONCISE.  
 can decrease the number of peaks retained by CONCISE.  
-- **`filter_small_shifted_peaks`** sets threshold to discard small shifted 
-peaks (in ppm) across different spectra . The threshold values are separated 
-by commas and used to filter chemical shifts defined in the field 
-of **`sparky_fields_to_use_and_scale`**. 
+- **`filter_small_shifted_peaks`** sets the threshold (in ppm) to discard peaks that 
+shift too little. The threshold values are separated 
+by commas in the field called **`sparky_fields_to_use_and_scale`**. 
 The field is by default turned off (`0.0, 0.0`). When **`sparky_fields_to_use_and_scale`** is 
 set as default `N=0.2, H=1` and  **`alternation_or_combination_of_fields`** 
-is set default `interleave`,  a `0.02, 0.02` **`filter_small_shifted_peaks`** discard rows 
-(either `N` or `H`) whose values vary smaller than 0.02 ppm across different spectra (i.e. columns). 
+is set to the default of `interleave`,  a `0.02, 0.02` setting of **`filter_small_shifted_peaks`** discard rows 
+(either `N` or `H`) whose values vary less than 0.02 ppm across the spectra (i.e. columns). 
 If the  **`alternation_or_combination_of_fields`** 
 is set to 'combine', the first values in  **`filter_small_shifted_peaks`** is used to filter peaks 
-whose CCS vary smaller than the threshold (e.g. 0.02 ppm) across different spectra.  
-- **`coordinated_behavior`**  This checkbox is checked to turn on CONCISE analysis when click the 
-**start** at lower right to start the calculation. `TRENDanalysis` can be used to continue 
+whose CCS vary less than the threshold (e.g. 0.02 ppm) across different spectra.  
+- **`coordinated_behavior`**  This checkbox is checked to turn on CONCISE analysis when 
+**start** button is clicked at the lower right to start the calculation. 
+`TRENDanalysis` can be used to continue 
 and adjust the calculations under the CONCISE tab. For example, the first 
-and last extreme states may be set and the plot can be labeled using a file 
-listing the labels for the peaks. See [CONCISE manual](../trendanalysis/concise.md#interactive) for details. 
+and last extreme states may be set. The plot can be labeled using a file 
+listing the labels for the peaks. See the [CONCISE manual](../trendanalysis/concise.md#interactive) for details. 
 
 
 
