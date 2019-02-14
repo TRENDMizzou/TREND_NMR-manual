@@ -138,7 +138,8 @@ measured accurately by WaterLOGSY at low [protein] ([Huang et al., 2017,
 <li> Henderson-Hasselbalch equation (pKa, ymax, ymin) </li>  
 This model determines pKa by fitting the equation 
 {% math %} y = y_{max} - \frac{y_{max} - y_{min}}{1+10^{x-pKa}}  {% endmath %}, 
-where y the changes of chemical shift or PC during titration, x refers to the pH. 
+where y is the change of chemical shift or PC during the titration and x, 
+x is the pH of the sample. 
 
 ##### <p hidden>linear-regression</p>  
 <li>Linear regression</li>  
