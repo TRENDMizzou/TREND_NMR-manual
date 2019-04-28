@@ -1,6 +1,6 @@
 ## TREND NMR: TRack Equilibrium or Non-equilibrium shifts in NMR Data
 ### Resolve and Fit Trends such as Binding Isotherms and Time Courses Directly from Spectra, FIDs, or Lists  
-Version 1.8.7   
+Version 1.8.8   
 For further information, see 
 [biochem.missouri.edu/trend](http://biochem.missouri.edu/trend)  
 For manual of classic TREND, see
@@ -29,3 +29,10 @@ complexes to rank binders using TRENDanalysis. The automation can
 increase your productivity and insight, and thereby free you to think
 strategically.
 
+___  
+
+[Academic Software License Request](http://biochem.missouri.edu/trend/academic_request.php)  
+[Non-Academic/Commerical Software License Request](http://biochem.missouri.edu/trend/commerical_request.php)  
+[TREND Academic Software License Agreement [PDF]](http://biochem.missouri.edu/trend/docs/TREND_LicenseAgreement.pdf)  
+
+If you have any question, please contact <trendmizzou@gmail.com>
