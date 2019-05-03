@@ -47,7 +47,8 @@ one is `TREND_NMR_pro`, which contains `TRENDNMR.exe`, `TRENDanalysis.exe`, and
   be removed or deleted, since the installation step just creates shortcuts.  
 
 #### Mac OS X 10.7.5 and later
-
+* See [Known Limitations by OS](Known_limitations_by_OS.md) if TREND apps
+can't be launched on OSX 10.11 and later  
 * Unzip the `TRENDpro-1.7-macOS.tar.gz` by double clicking the file 
   displayed in the OS X GUI. Alternatively, run the command 
   `tar -xzvf TRENDpro-1.7-macOS.tar.gz` within a terminal shell.  
