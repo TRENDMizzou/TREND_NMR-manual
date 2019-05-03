@@ -28,6 +28,8 @@ the appropriate equation. You can compare and cluster spectra of
 complexes to rank binders using TRENDanalysis. The automation can
 increase your productivity and insight, and thereby free you to think
 strategically.
+<img src="./png/workflow.svg" width="400" alt="Work flow of TREND NMR" align="middle", class="center">
+
 
 ___  
 
